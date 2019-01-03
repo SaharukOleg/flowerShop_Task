@@ -1,4 +1,4 @@
-package enums;
+package com.sahar.entity.enums;
 
 public enum CactusType {
     HOME_CACTUS,

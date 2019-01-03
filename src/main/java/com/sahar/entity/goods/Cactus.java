@@ -1,10 +1,10 @@
-package goods;
+package com.sahar.entity.goods;
 
-import abstractPac.Flower;
-import enums.CactusType;
-import enums.Color;
+import com.sahar.entity.Plant;
+import com.sahar.entity.enums.CactusType;
+import com.sahar.entity.enums.Color;
 
-public class Cactus extends Flower {
+public class Cactus extends Plant {
     private CactusType cactusType;
 
     public CactusType getCactusType() {

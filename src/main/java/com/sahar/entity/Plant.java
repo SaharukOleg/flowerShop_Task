@@ -1,14 +1,13 @@
-package abstractPac;
+package com.sahar.entity;
 
-import enums.Color;
+import com.sahar.entity.enums.Color;
 
-abstract public class Flower {
+public class Plant { //батьківський клас рослина !
     private String name;
     private double price;
     private Color color;
 
-
-    public Flower(String name, double price, Color color) {
+    public Plant(String name, double price, Color color) {
         this.name = name;
         this.price = price;
         this.color = color;
@@ -41,9 +40,9 @@ abstract public class Flower {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Flower)) return false;
+        if (!(o instanceof Plant)) return false;
 
-        Flower that = (Flower) o;
+        Plant that = (Plant) o;
 
         if (Double.compare(that.getPrice(), getPrice()) != 0) return false;
         if (getName() != null ? !getName().equals(that.getName()) : that.getName() != null) return false;
@@ -63,7 +62,7 @@ abstract public class Flower {
 
     @Override
     public String toString() {
-        return "Flower{" +
+        return "com.sahar.entity.Plant{" +
                 "name='" + name + '\'' +
                 ", price=" + price +
                 ", color=" + color +

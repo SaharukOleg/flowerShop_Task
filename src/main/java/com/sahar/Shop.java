@@ -1,13 +1,4 @@
-package main_Pac;
-
-import enums.CactusType;
-import enums.Color;
-import enums.TulipType;
-import goods.Cactus;
-import goods.Tulip;
-
-import java.util.ArrayList;
-import java.util.List;
+package com.sahar;
 
 public class Shop {
 //    List<Tulip> tulipList = new ArrayList<>(); // список для тюльпанів

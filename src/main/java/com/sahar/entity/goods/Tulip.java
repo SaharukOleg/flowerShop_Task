@@ -1,10 +1,10 @@
-package goods;
+package com.sahar.entity.goods;
 
-import abstractPac.Flower;
-import enums.Color;
-import enums.TulipType;
+import com.sahar.entity.Plant;
+import com.sahar.entity.enums.Color;
+import com.sahar.entity.enums.TulipType;
 
-public class Tulip extends Flower {
+public class Tulip extends Plant {
     private TulipType tulipType;
 
     public Tulip(TulipType tulipType, String name, double price, Color color) {
