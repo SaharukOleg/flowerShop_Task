@@ -4,7 +4,15 @@ import com.sahar.entity.Plant;
 import com.sahar.entity.enums.CactusType;
 import com.sahar.entity.enums.Color;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "cactus")
 public class Cactus extends Plant {
+
+    @Column(name = "cactusType")
     private CactusType cactusType;
 
     public CactusType getCactusType() {

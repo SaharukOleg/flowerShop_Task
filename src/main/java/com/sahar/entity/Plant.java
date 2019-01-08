@@ -2,15 +2,40 @@ package com.sahar.entity;
 
 import com.sahar.entity.enums.Color;
 
+import javax.persistence.*;
+
+//@Entity
+//@Table(name = "plant")
+@MappedSuperclass
 public class Plant { //батьківський клас рослина !
+    @Id
+    @GeneratedValue
+    @Column(name = "id")
+    private int id;
+    @Column(name = "name")
     private String name;
+    @Column(name = "price")
     private double price;
+    @Enumerated(EnumType.STRING)
+    @Column(length = 10)
     private Color color;
+
+
+    public Plant() {
+    }
 
     public Plant(String name, double price, Color color) {
         this.name = name;
         this.price = price;
         this.color = color;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {

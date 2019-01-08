@@ -9,6 +9,7 @@ public enum TulipType {
     LILIUM("lilium"), // лілійний
     PIONEER("pioneer"); // піоновидний
 
+
     private final String value;
 
     TulipType(final String valueNNN) {
