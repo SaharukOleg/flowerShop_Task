@@ -1,8 +1,23 @@
 package com.sahar;
 
-public class Main {
+import com.sahar.bouquets.Bouquet;
+import com.sahar.bouquets.BouquetsCreator;
+import com.sahar.entity.enums.Color;
+import com.sahar.entity.enums.TulipType;
+import com.sahar.entity.goods.Tulip;
+import com.sahar.repository.BouquetOperation;
+import com.sahar.repository.TulipOperation;
+import com.sahar.wrapper.Wrapper;
+import com.sahar.wrapper.WrapperOperation;
+import com.sahar.wrapper.WrapperType;
 
-    public static void main(String[] args) {
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
+
+public class Main {
 
 //        JdbcFacade jdbc = new JdbcFacade();
 //        //  jdbc.driverRegister();
@@ -15,26 +30,50 @@ public class Main {
 ////        shop.printAllCactus();
 //    }
 
+    List<Bouquet> bouquetList = new ArrayList<>();
 
-        //  TulipRepository tulipRepository = new TulipRepository();
-        // додаю тюльпани в БД
-//        tulipRepository.insertTulip(new Tulip(TulipType.TERRY, "Махра", 1.99, Color.RED));
-//        tulipRepository.insertTulip(new Tulip(TulipType.TERRY, "Маппппра", 1.99, Color.RED));
-//        tulipRepository.insertTulip(new Tulip(TulipType.PIONEER, "Піоновидний", 2.99, Color.VIOLET));
-
-        // отримати тюльпан
-        //    Tulip tulip = tulipRepository.getTulip(3);
-        //   System.out.println(tulip);
-
-        //оновлення даних в тюльпані
-//        Tulip tulip = tulipRepository.updateTulip(3);
-//           System.out.println(tulip);
-
-        // видаляє тюльпан з БД
-        //  Tulip tulip = tulipRepository.deleteTulip(3);
-
+    public void addBouqet() {
 
     }
 
+    public static void main(String[] args) {
+        //(Працює)
+        TulipOperation tulipOperation = new TulipOperation(Tulip.class);
+        tulipOperation.save(new Tulip(TulipType.TERRY, "Махра", 1.99, Color.RED));  // додаю тюльпани в БД
+        tulipOperation.save(new Tulip(TulipType.TERRY, "Маппппра", 1.99, Color.RED));
+        tulipOperation.save(new Tulip(TulipType.PIONEER, "Піоновидний", 2.99, Color.VIOLET));
 
+        WrapperOperation wrapperOperation = new WrapperOperation(Wrapper.class);
+        wrapperOperation.save(new Wrapper(WrapperType.PAPER_COWER, Color.YELLOW, 15));
+        wrapperOperation.save(new Wrapper(WrapperType.PAPER_COWER, Color.VIOLET, 35));
+
+        //    отримати тюльпан (Працює)
+//        Tulip tulip = (Tulip) tulipOperation.getObject(3);
+//        System.out.println(tulip);
+
+        BouquetsCreator bouquetsCreator = new BouquetsCreator();
+        bouquetsCreator.doB();
+        //BouquetOperation bouquetOperation = new BouquetOperation(Bouquet.class);
+        //System.out.println(bouquetOperation.getObject(1));
+
+//        System.out.println(tulipOperation.getObject(3));
+//
+//        //отримати обгортку (Працює)
+//        System.out.println(wrapperOperation.getObject(2));
+//
+
+
+        //оновлення даних в тюльпані (ше треба доробити )
+//        Tulip tulip2 =tulipOperation.updateTulip(tulip);
+//           System.out.println(tulip);
+
+        //(працює)
+        // видаляє обєкт з БД (але щоб його видалити то спочатку його треба отримати )
+//        wrapperOperation.getObject(3);
+//        wrapperOperation.deleteObject(3);
+        //     wrapperOperation.deleteObject(2);
+        //   wrapperOperation.deleteObject(3);
+
+
+    }
 }

@@ -1,6 +1,21 @@
 package com.sahar;
 
+import com.sahar.entity.Plant;
+import com.sahar.entity.enums.Color;
+import com.sahar.entity.enums.TulipType;
+import com.sahar.entity.goods.Tulip;
+import com.sahar.wrapper.Wrapper;
+import com.sahar.wrapper.WrapperType;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class Shop {
+
+//    List<Wrapper> wrapperList = new ArrayList<>();
+//    public void add(){
+//        wrapperList.add(new Wrapper(WrapperType.PAPER_COWER, Color.YELLOW,50));
+//    }
 //    List<Tulip> tulipList = new ArrayList<>(); // список для тюльпанів
 //    List<Cactus> cactusList = new ArrayList<>();// список кактусів
 //
@@ -85,6 +100,21 @@ public class Shop {
 //    }
 //
 
+    List<Plant> plantList = new ArrayList<>();
+    Tulip tulip;
 
-
+    public Shop(List<Plant> plantList) {
+        this.plantList = plantList;
+    }
+    public List<Plant> getPlantList() {
+        return plantList;
+    }
+//    public List<Plant> getPlants() {
+//        for (Plant plant : plantList) {
+//            if (tulip instanceof Plant && tulip.getTulipType() == TulipType.TERRY) { // тут
+//                plantList.add(tulip);
+//            }
+//        }
+//        return plantList;
+//    }
 }

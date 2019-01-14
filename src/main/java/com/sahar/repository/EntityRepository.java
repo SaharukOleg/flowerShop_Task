@@ -1,9 +1,11 @@
 package com.sahar.repository;
 
+import com.sahar.bouquets.Bouquet;
 import com.sahar.entity.Plant;
 import com.sahar.entity.goods.Cactus;
 import com.sahar.entity.goods.Palm;
 import com.sahar.entity.goods.Tulip;
+import com.sahar.wrapper.Wrapper;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
@@ -25,6 +27,8 @@ public class EntityRepository {
         config.addAnnotatedClass(Tulip.class);
         config.addAnnotatedClass(Palm.class);
         config.addAnnotatedClass(Cactus.class);
+        config.addAnnotatedClass(Wrapper.class);
+        config.addAnnotatedClass(Bouquet.class);
         // config.addResource("User.hbm.xml");
         serviceRegistry = new StandardServiceRegistryBuilder().applySettings(config.getProperties()).build();// настройки (хз)
         factory = config.buildSessionFactory(serviceRegistry); // factory це обєкт який представляє базу даних

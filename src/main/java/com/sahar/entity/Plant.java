@@ -1,12 +1,13 @@
 package com.sahar.entity;
 
+import com.sahar.bouquets.Bouquet;
 import com.sahar.entity.enums.Color;
 
 import javax.persistence.*;
-
-//@Entity
+@Entity(name = "plant")
 //@Table(name = "plant")
-@MappedSuperclass
+//@MappedSuperclass
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE) //  неможу до @MappedSuperclass робити відношення
 public class Plant { //батьківський клас рослина !
     @Id
     @GeneratedValue
@@ -19,6 +20,9 @@ public class Plant { //батьківський клас рослина !
     @Enumerated(EnumType.STRING)
     @Column(length = 10)
     private Color color;
+    @ManyToOne(fetch = FetchType.EAGER)
+   // @Column(name = "bouquet")
+    private Bouquet bouquet;
 
 
     public Plant() {
@@ -28,6 +32,14 @@ public class Plant { //батьківський клас рослина !
         this.name = name;
         this.price = price;
         this.color = color;
+    }
+
+    public Bouquet getBouquet() {
+        return bouquet;
+    }
+
+    public void setBouquet(Bouquet bouquet) {
+        this.bouquet = bouquet;
     }
 
     public int getId() {
@@ -87,10 +99,12 @@ public class Plant { //батьківський клас рослина !
 
     @Override
     public String toString() {
-        return "com.sahar.entity.Plant{" +
-                "name='" + name + '\'' +
+        return "Plant{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
                 ", price=" + price +
                 ", color=" + color +
+                ", bouquet=" + bouquet +
                 '}';
     }
 }
