@@ -6,7 +6,6 @@ import com.sahar.repository.BouquetOperation;
 import com.sahar.repository.TulipOperation;
 
 import java.util.HashSet;
-import java.util.Set;
 
 
 public class BouquetsCreator {
@@ -22,12 +21,17 @@ public class BouquetsCreator {
 
         flowers.add((Tulip) tulipOperation.getObject(3));
         flowers.add((Tulip) tulipOperation.getObject(2));
-//
-//        bouquet.setPlants(flowers);
-//        bouquetOperation.save(bouquet);
+        flowers.add((Tulip) tulipOperation.getObject(1));
+        flowers.add((Tulip) tulipOperation.getObject(4));
 
-        System.out.println(bouquetOperation.getObject(1));
-        System.out.println(bouquetOperation.getObject(2));
-        //saveObj.save(bouquet);
+
+//
+        bouquet.setPlants(flowers);
+        bouquetOperation.saveObject(bouquet);
+//        bouquetOperation.saveObject(flowers);
+
+//        System.out.println(tulipOperation.getObject(1));
+//        System.out.println(tulipOperation.getObject(2));
+        //saveObj.saveObject(bouquet);
     }
 }

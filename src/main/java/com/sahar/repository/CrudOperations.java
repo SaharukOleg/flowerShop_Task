@@ -21,7 +21,7 @@ public class CrudOperations<T> extends EntityRepository {
 //        try {
 //            tx = session.beginTransaction();
 //
-//            userIdSaved = (Integer) session.save(tulip);
+//            userIdSaved = (Integer) session.saveObject(tulip);
 //            tx.commit();
 //        } catch (HibernateException ex) {
 //            if (tx != null)
@@ -34,7 +34,7 @@ public class CrudOperations<T> extends EntityRepository {
 //    }
 
 
-    public <S extends T> S save(T entity) { // і якщо сюда передати Object object
+    public <S extends T> S saveObject(T entity) { // і якщо сюда передати Object object
         Session session = factory.openSession();
         Transaction tx = null;
         S userIdSaved = null;

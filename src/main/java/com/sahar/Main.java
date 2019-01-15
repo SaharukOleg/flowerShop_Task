@@ -5,16 +5,13 @@ import com.sahar.bouquets.BouquetsCreator;
 import com.sahar.entity.enums.Color;
 import com.sahar.entity.enums.TulipType;
 import com.sahar.entity.goods.Tulip;
-import com.sahar.repository.BouquetOperation;
 import com.sahar.repository.TulipOperation;
 import com.sahar.wrapper.Wrapper;
 import com.sahar.wrapper.WrapperOperation;
 import com.sahar.wrapper.WrapperType;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 
 public class Main {
@@ -39,13 +36,14 @@ public class Main {
     public static void main(String[] args) {
         //(Працює)
         TulipOperation tulipOperation = new TulipOperation(Tulip.class);
-        tulipOperation.save(new Tulip(TulipType.TERRY, "Махра", 1.99, Color.RED));  // додаю тюльпани в БД
-        tulipOperation.save(new Tulip(TulipType.TERRY, "Маппппра", 1.99, Color.RED));
-        tulipOperation.save(new Tulip(TulipType.PIONEER, "Піоновидний", 2.99, Color.VIOLET));
+        tulipOperation.saveObject(new Tulip(TulipType.TERRY, "Махра", 1.99, Color.RED));  // додаю тюльпани в БД
+        tulipOperation.saveObject(new Tulip(TulipType.TERRY, "Маппппра", 1.99, Color.RED));
+        tulipOperation.saveObject(new Tulip(TulipType.PIONEER, "Піоновидний", 2.99, Color.VIOLET));
+        tulipOperation.saveObject(new Tulip(TulipType.LILIUM, "Новий", 2.99, Color.GREEN));
 
         WrapperOperation wrapperOperation = new WrapperOperation(Wrapper.class);
-        wrapperOperation.save(new Wrapper(WrapperType.PAPER_COWER, Color.YELLOW, 15));
-        wrapperOperation.save(new Wrapper(WrapperType.PAPER_COWER, Color.VIOLET, 35));
+        wrapperOperation.saveObject(new Wrapper(WrapperType.PAPER_COWER, Color.YELLOW, 15));
+        wrapperOperation.saveObject(new Wrapper(WrapperType.PAPER_COWER, Color.VIOLET, 35));
 
         //    отримати тюльпан (Працює)
 //        Tulip tulip = (Tulip) tulipOperation.getObject(3);

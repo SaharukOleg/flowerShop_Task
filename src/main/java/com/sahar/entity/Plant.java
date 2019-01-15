@@ -4,6 +4,7 @@ import com.sahar.bouquets.Bouquet;
 import com.sahar.entity.enums.Color;
 
 import javax.persistence.*;
+
 @Entity(name = "plant")
 //@Table(name = "plant")
 //@MappedSuperclass
@@ -21,7 +22,7 @@ public class Plant { //батьківський клас рослина !
     @Column(length = 10)
     private Color color;
     @ManyToOne(fetch = FetchType.EAGER)
-   // @Column(name = "bouquet")
+    //@Column(name = "bouquet")
     private Bouquet bouquet;
 
 
